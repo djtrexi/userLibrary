@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title>Welcome</title>
+    <meta charset = "UTF-8">
+  </head>
+  <body>
+    <div id = "header">
+      <header>
+        <div id = "title">  
+          <h1>Welcome on the Library</h1>
+        </div>  
+        <div id = "name">
+          <p>
+            <strong>
+              Create by Cerchioni Leonardo
+            </strong>
+          </p>
+        </div>
+      </header>
+    </div>
+    <div id = "main">
+      <main>
+        <div id = "login">
+          <section>
+            <article>
+
+            </article>
+          </section>
+        </div>
+        <div id = "sing">
+          <section>
+            <article>
+              
+            </article>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
