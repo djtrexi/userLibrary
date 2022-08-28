@@ -24,14 +24,18 @@
         <div id = "login">
           <section>
             <article>
-
-            </article>
+              <?php
+                echo "<a href = 'login.php'><input type = 'submit'>Login</input></a>";
+              ?>
+              </article>
           </section>
         </div>
         <div id = "sing">
           <section>
             <article>
-              
+              <?php
+                echo "<a href = 'sign.php'><input type = 'submit'>Sign</input></a>";
+              ?>
             </article>
           </section>
         </div>
