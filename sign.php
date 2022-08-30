@@ -58,15 +58,30 @@
                               WHERE email = '$email'";
                     $result = mysqli_query($connessione, $query);
                     if(mysqli_num_rows($result) == 0){
-
+                      ?>
+                      <div>
+                        <p>Utente già registrato... :(</p>
+                      </div>
+                      <?php
                     }
                     else{
-
+                      $query = "INSERT INTO utenti VALUES('$nome', '$cognome', '$email', '$password')";
+                      $result = mysqli_query($connessione, $query);
+                      if(!$result){
+                        ?>
+                        <div>
+                          <p>Problemi nella registrazione dell'utente riprova tra poco... :(</p>
+                        </div>
+                        <?php
+                      }
+                      else{
+                        echo "<a href = ''>Link</a>";
+                      }
                     }
                 }
               }
             ?>
-</section>
+        </section>
       </main>
     </div>
   </body>    
