@@ -70,12 +70,14 @@
                       if(!$result){
                         ?>
                         <div>
-                          <p>Problemi nella registrazione dell'utente riprova tra poco... :(</p>
+                          <?php
+                            header('sign.php');
+                          ?>
                         </div>
                         <?php
                       }
                       else{
-                        echo "<a href = ''>Link</a>";
+                        header('researchBook.php');
                       }
                     }
                 }
