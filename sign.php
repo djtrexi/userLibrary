@@ -1,4 +1,7 @@
 <?php
+  session_start();
+?>
+<?php
   require("connessione.php");
 ?>
 <!DOCTYPE html>
@@ -26,13 +29,41 @@
                 <article>
                   <div id = "formNewClient">
                     <form method = "POST" action = "sign.php">
-                      Nome <input type = "text" name = "nome">
+                      <span>  
+                        <p>
+                          <strong>
+                            Nome 
+                          </strong>
+                        </p>
+                        <input type = "text" name = "nome">
+                      </span>
                       <br><br>
-                      Cognome <input type = "text" name = "cognome">
+                      <span>
+                        <p>
+                          <strong>
+                            Cognome 
+                          </strong>
+                        </p>
+                        <input type = "text" name = "cognome">
+                      </span>
                       <br><br>
-                      Email <input type = "email" name = "email">
+                      <span>
+                        <p>
+                          <strong>
+                            Email 
+                          </strong>
+                        </p>
+                        <input type = "email" name = "email">
+                      </span>
                       <br><br>
-                      Password <input type = "password" name = "password">
+                      <span>
+                        <p>
+                          <strong>
+                            Password 
+                          </strong>
+                        </p>
+                        <input type = "password" name = "password">
+                      </span>
                       <br><br>
                       <input type = "submit" value = "Sign">
                       <input type = "reset" value = "Reset">
@@ -77,7 +108,9 @@
                         <?php
                       }
                       else{
-                        header('researchBook.php');
+                        $error = false;
+                        $_SESSION['messaggio_errore'] = $error;
+                        header('login.php');
                       }
                     }
                 }

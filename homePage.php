@@ -13,7 +13,7 @@
         <div id = "name">
           <p>
             <strong>
-              Create by Cerchioni Leonardo
+              Creato da Cerchioni Leonardo
             </strong>
           </p>
         </div>
