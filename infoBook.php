@@ -98,7 +98,7 @@
                             echo "<td>$row[edizione]</td>";
                             echo "<td>$row[annodipubblicazione]</td>";
                             echo "<td>$row[prezzo]</td>";
-                            echo "<td><a href = 'aggiuntaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'aggiungi'></td>";
+                            echo "<td><a href = 'aggiuntaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'aggiungi'>Aggiungi</td>";
                           echo "</tr>";
                         }
                       echo "</table>";
