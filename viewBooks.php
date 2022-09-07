@@ -37,7 +37,7 @@
                   <button>
                     <?php 
                       echo "<a href = 'viewBooksNotShop.php'></a>"; 
-                      ?>
+                    ?>
                     Libri aggiunti alla lista ma non acquistati
                   </button>
                   <button>
