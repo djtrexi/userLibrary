@@ -51,7 +51,7 @@
                             echo "<td>SI</td>";
                           }
                           else{
-                            echo "<td><a href = 'acquistaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'comprato'>NO</td>";
+                            echo "<td><a href = 'aggiuntaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'comprato'>NO</td>";
                           }
                         echo "</tr>";
                       }

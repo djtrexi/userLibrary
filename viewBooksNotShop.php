@@ -35,6 +35,7 @@
                         echo "<th>Casa editrice</th>";
                         echo "<th>Edizione</th>";
                         echo "<th>Anno di pubblicazione</th>";
+                        echo "<th>Compra</th>";
                       echo "</tr>";
                       while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
@@ -42,6 +43,7 @@
                           echo "<td>$row[casaedotrice]</td>";
                           echo "<td>$row[edizione]</td>";
                           echo "<td>$row[annodipubblicazione]</td>";
+                          echo "<td><a href = 'aggiuntaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'comprato'>Compra</td>";
                         echo "</tr>";
                       }
                   } 
