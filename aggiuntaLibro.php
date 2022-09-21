@@ -33,9 +33,18 @@
       mysqli_free_result($result);
       $result = mysqli_query($connessione, $query);
       if($result){
-        $error = false;
-        $_SESSION['messaggio_errore'] = $error;
-        header('Location: http://localhost/LibraryPHP/viewBooks.php/');
+        $query = "UPDATE libri
+                  SET aggiunto = 1
+                  WHERE id = '$idLibro'";
+        $result = mysqli_query($connessione, $query);
+        if($result){
+
+        }
+        else{
+          $error = false;
+          $_SESSION['messaggio_errore'] = $error;
+          header('Location: http://localhost/LibraryPHP/viewBooks.php/');
+        }
       }
       else{
         $error = true;
