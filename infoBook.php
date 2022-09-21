@@ -8,11 +8,43 @@
     <title>Info libro</title>
     <meta charset = "UTF-8">
     <style>
+      body{
+        height: 100%;
+        width: 100%;
+      }
 
+      #navLinkButton{
+        text-align: center;
+      }
+
+      button{
+        margin: 15px;
+      }
+
+      #header{
+        text-align: center;
+        border: 2px solid black;
+        margin-bottom: 20px;
+      }
+
+      table, th, td {
+        border: 1px solid;
+        width: 100%;
+        text-align: center;
+        height: 50px;
+      }
+
+      th{
+        background-color: green;
+      }
+
+      tr:hover {
+        background-color: coral;
+      }
     </style>
   </head>
   <body>
-    <div>
+    <div id = "header">
       <header>
         <div>
           <?php
@@ -74,11 +106,11 @@
                 $query = "SELECT *
                           FROM libri
                           WHERE titolo LIKE '%$nameLibro%'";
-                $result = mysqli_query($conessione, $query);
+                $result = mysqli_query($connessione, $query);
                 if(mysqli_num_rows($result) == 0){
                   $error = true;
                   $_SESSION['messaggio_errore'] = $error;
-                  header('infoBook.php');
+                  header('Location: http://localhost/LibraryPHP/infoBook.php/');
                 }
                 else{
               ?>
@@ -102,7 +134,7 @@
                             echo "<td>$row[edizione]</td>";
                             echo "<td>$row[annodipubblicazione]</td>";
                             echo "<td>$row[prezzo]</td>";
-                            echo "<td><a href = 'aggiuntaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'aggiungi'>Aggiungi</td>";
+                            echo "<td><a href = 'aggiuntaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'aggiungi'></td>";
                           echo "</tr>";
                         }
                       echo "</table>";
@@ -116,13 +148,11 @@
               <section>
                 <article>
                   <div>
-                    <nav>
-                      <div>
-                        <a href = 'researchBook.php'><input type = 'submit' value = 'torna alla home'>
-                      </div>
-                      <div>
-                        <a href = 'viewBooks.php'><input type = 'submit' value = 'vedi i tuoi libri salvati'>
-                      </div>
+                    <nav id = "navLinkButton">
+                      <?php
+                        echo "<button><a href = 'researchBook.php'>Torna alla home</a></button>";
+                        echo "<button><a href = 'viewBooks.php'>vedi i tuoi libri salvati</a></button>";
+                      ?>
                     </nav>
                   </div>
                 </article>
