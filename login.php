@@ -23,10 +23,18 @@
         echo "<div>";
           $error = $_SESSION['messaggio_errore'];
           if($error){
-            $message = "Error 404...email e password sbagliati";
-            echo "<script type='text/javascript'>
-                    alert('$message');
-                  </script>";
+            echo "<header>";
+              echo "<div>";
+                echo "<h2>Errore 404</h2>";
+              echo "</div>";
+              echo "<div>";
+                echo "<p>";
+                  echo "<strong>";
+                    echo "I dati inseriti sono errati...";
+                  echo "</strong>";
+                echo "</p>";
+              echo "</div>";
+            echo "</header>";
           }
         echo "</div>";
       ?>
@@ -90,6 +98,8 @@
                           if($password == $password_rows_user['password']){
                             $_SESSION['emailUtente'] = $email;
                             $_SESSION['start_time'] = time();
+                            $error = false;
+                            $_SESSION['messaggio_errore'] = $error;
                             header('Location: http://localhost/LibraryPHP/researchBook.php/');
                           }
                           else{

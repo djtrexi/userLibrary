@@ -25,6 +25,11 @@
         border-radius: 14px;
         border: 2px solid black;
       }
+
+      form{
+        margin-top: 22px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -42,9 +47,8 @@
               <p>La ricerca del libro si fa per titolo del nome del libro</p>
             </div>
           </div>
-        </div>
-        
-</header>
+        </div>       
+      </header>
     </div>
     <div>
       <main>
@@ -53,11 +57,23 @@
             <article>
               <?php
                 $error = $_SESSION['messaggio_errore'];
-                if($error){    
-                  $message = "Error 404...errore nella ricerca del libro";
-                  echo "<script type = 'text/javascript'>
-                          alert('$message');
-                        </script>";
+                if($error){
+              ?>
+                  <div id = "zoneError">
+                    <header>
+                      <div>
+                        <h2>Errore 404</h2>
+                      </div>
+                      <div>
+                        <p>
+                          <strong>
+                            C'è stato un errore sulla ricerca del libro
+                          </strong>
+                        </p>
+                      </div>
+                    </header>
+                  </div>
+              <?php
                 }
               ?>
             </article>
@@ -66,7 +82,7 @@
         <div>
           <section>
             <article>
-              <div>
+              <div id = "inputBook">
                 <?php
                   if(!isset($_POST['namebook'])){
                 ?>
@@ -87,9 +103,10 @@
             </article>
           </section>
         </div>
-        <section>
-          <article>
-            <?php
+        <div id = "checkInputBook">
+          <section>
+            <article>
+              <?php
                   $nomeLibro = $_POST['namebook'];
                   if(strlen($nomeLibro) == 0){
                     ?>
@@ -110,6 +127,7 @@
             ?>
           </article>
         </section>
+        </div>
       </main>
     </div>
   </body>
