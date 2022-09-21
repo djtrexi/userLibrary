@@ -114,11 +114,10 @@
                               WHERE email = '$email'";
                     $result = mysqli_query($connessione, $query);
                     if(mysqli_num_rows($result) != 0){
-                      ?>
-                      <div>
-                        <p>Utente già registrato... :(</p>
-                      </div>
-                      <?php
+                      $message = "Error 404...Utente già registrato nel nostro sito";
+                      echo "<script type='text/javascript'>
+                              alert('$message');
+                            </script>";
                     }
                     else{
                       $query = "INSERT INTO utenti(nome, cognome, email, password) VALUES('$nome', '$cognome', '$email', '$password')";

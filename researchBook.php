@@ -6,22 +6,45 @@
 <html lang = 'en'>
   <head>
     <title>The book</title>
+    <meta charset = "UTF-8">
+    <style>
+      body{
+        height: 100%;
+        width: 100%;
+      }
+
+      #header{
+        text-align: center;
+        border: 2px solid black;
+      }
+
+      #zoneError{
+        margin: 6px;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 14px;
+        border: 2px solid black;
+      }
+    </style>
   </head>
   <body>
-    <div>  
+    <div id = "header">  
       <header>
-        <div>
+        <div id = "zoneTitle">
           <div>
-            <h1>Ricerca libro</h1>
+            <h1 id = "title">Ricerca libro</h1>
           </div>
-          <div>
-            <p>Creato da Leonardo Cerchioni</p>
-          </div>
-          <div>
-            <p>La ricerca del libro si fa per titolo del nome del libro</p>
+          <div id = "zoneText">
+            <div id = "zoneCreate">
+              <p id = "pHeader">Creato da Leonardo Cerchioni</p>
+            </div>
+            <div id = "zoneTextPostCreate">
+              <p>La ricerca del libro si fa per titolo del nome del libro</p>
+            </div>
           </div>
         </div>
-      </header>
+        
+</header>
     </div>
     <div>
       <main>
@@ -30,23 +53,11 @@
             <article>
               <?php
                 $error = $_SESSION['messaggio_errore'];
-                if($error){
-              ?>
-                  <div>
-                    <header>
-                      <div>
-                        <h2>Errore 404</h2>
-                      </div>
-                      <div>
-                        <p>
-                          <strong>
-                            C'è stato un errore sulla ricerca del libro
-                          </strong>
-                        </p>
-                      </div>
-                    </header>
-                  </div>
-              <?php
+                if($error){    
+                  $message = "Error 404...errore nella ricerca del libro";
+                  echo "<script type = 'text/javascript'>
+                          alert('$message');
+                        </script>";
                 }
               ?>
             </article>
@@ -85,7 +96,7 @@
                     <div>
                       <?php
                         $_SESSION['messaggio_errore'] = true;
-                        header('researchBook.php');
+                        header('Location: http://localhost/LibraryPHP/researchBook.php/');
                       ?>
                     </div>
                     <?php
@@ -93,7 +104,7 @@
                   else{
                     $_SESSION['messaggio_errore'] = false;
                     $_SESSION['nameBook'] = $nomeLibro;
-                    header('infoBook.php');
+                    header('Location: http://localhost/LibraryPHP/infoBook.php/');
                   }
                 }
             ?>
