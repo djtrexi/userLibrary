@@ -6,6 +6,10 @@
 <html lang = "en">
   <head>
     <title>Info libro</title>
+    <meta charset = "UTF-8">
+    <style>
+
+    </style>
   </head>
   <body>
     <div>
