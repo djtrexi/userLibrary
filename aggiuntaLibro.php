@@ -3,7 +3,6 @@
   require('connessione.php');
 ?>
 <?php
-  mysqli_free_result($result);
   $idLibro = $_GET['idLibro'];
   $email = $_SESSION['emailUtente'];
   $query = "SELECT id
@@ -23,9 +22,9 @@
     mysqli_free_result($result);
 
     $query = "SELECT *
-              FROM aggiunta
-              WHERE codiceUtente = '$idUtente' 
-                    AND codicelibro = '$idLibro'";
+              FROM aggiunta, utenti, libri
+              WHERE codiceutente = '$idUtente' 
+                    AND codicelibri = '$idLibro'";
     $result = mysqli_query($connessione, $query);
     if(mysqli_num_rows($result) == 0){
       $query = "INSERT INTO aggiunta(codiceutente, codicelibri, acquistato)
@@ -38,12 +37,14 @@
                   WHERE id = '$idLibro'";
         $result = mysqli_query($connessione, $query);
         if($result){
-
-        }
-        else{
           $error = false;
           $_SESSION['messaggio_errore'] = $error;
           header('Location: http://localhost/LibraryPHP/viewBooks.php/');
+        }
+        else{
+          $error = true;
+          $_SESSION['messaggio_errore'] = $error;
+          header('Location: http://localhost/LibraryPHP/infoBook.php/');
         }
       }
       else{
