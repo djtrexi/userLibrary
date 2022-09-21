@@ -3,6 +3,30 @@
   <head>
     <title>Welcome</title>
     <meta charset = "UTF-8">
+    <style>
+      body{
+        height: 100%;
+        width: 100%;
+      }
+
+      #header{
+        text-align: center;
+        border: 2px solid black;
+      }
+
+      #title{
+        font-size: 35px;
+      }
+
+      #choise{
+        text-align: center;
+      }
+
+      button{
+        margin: 15px;
+        width: 100px;
+      }
+    </style>
   </head>
   <body>
     <div id = "header">
@@ -21,20 +45,12 @@
     </div>
     <div id = "main">
       <main>
-        <div id = "login">
+        <div id = "choise">
           <section>
             <article>
               <?php
-                echo "<a href = 'login.php'><input type = 'submit'>Login</input></a>";
-              ?>
-              </article>
-          </section>
-        </div>
-        <div id = "sing">
-          <section>
-            <article>
-              <?php
-                echo "<a href = 'sign.php'><input type = 'submit'>Sign</input></a>";
+                echo "<button type = 'submit'><a href = 'login.php'>Login</a></button>";
+                echo "<button type = 'submit'><a href = 'sign.php'>Sign</a></button>";
               ?>
             </article>
           </section>

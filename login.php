@@ -64,6 +64,8 @@
                       </p>
                       <input type = "password" name = "password">
                     </span>
+                    <br>
+                    <input type = "submit" value = "login">
                   </form>
                   <?php
                     }
@@ -89,8 +91,8 @@
                         $email = $_POST['email'];
 
                         $query = "SELECT *
-                                  FROM utenti u
-                                  WHERE u.email = '$email' AND u.password = '$password";
+                                  FROM utenti
+                                  WHERE email = '$email' AND password = '$password";
                         $result = mysqli_query($connessione, $query);
                         if($result){
                           $_SESSION['emailUtente'] = $email;

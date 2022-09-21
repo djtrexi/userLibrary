@@ -8,6 +8,31 @@
 <html lang = "en">
   <head>
     <title>Sign</title>
+    <meta charset = "UTF-8">
+    <style>
+      body{
+        height: 100%;
+        width: 100%;
+      }
+
+      #header{
+        text-align: center;
+        border: 2px solid black;
+      }
+
+      #title{
+        font-size: 35px;
+      }
+
+      #formNewClient{
+        text-align: center;
+      }
+
+      input{
+        margin: 5px;
+        width: 100px;
+      }
+    </style>
   </head>
   <body>
     <div id = "header">
@@ -79,16 +104,16 @@
                 $cognome = $_POST['cognome'];
                 $email = $_POST['email'];
                 $password = $_POST['password'];
-                if(strlen($nome) == 0 &&
-                   strlen($cognome) == 0 &&
-                   strlen($email) == 0 &&
-                   strlen($password) == 0){
+                if(strlen($nome) != 0 &&
+                   strlen($cognome) != 0 &&
+                   strlen($email) != 0 &&
+                   strlen($password) != 0){
                     $password = crypt($password, 0);
                     $query = "SELECT *
                               FROM utenti
                               WHERE email = '$email'";
                     $result = mysqli_query($connessione, $query);
-                    if(mysqli_num_rows($result) == 0){
+                    if(mysqli_num_rows($result) != 0){
                       ?>
                       <div>
                         <p>Utente già registrato... :(</p>
@@ -96,13 +121,14 @@
                       <?php
                     }
                     else{
-                      $query = "INSERT INTO utenti VALUES('$nome', '$cognome', '$email', '$password')";
+                      $query = "INSERT INTO utenti(nome, cognome, email, password) VALUES('$nome', '$cognome', '$email', '$password')";
                       $result = mysqli_query($connessione, $query);
                       if(!$result){
                         ?>
                         <div>
                           <?php
-                            header('sign.php');
+                            header("Location: http://localhost/LibraryPHP/sign.php/");
+                            echo "<a href = 'login.php'>login for you</a>";
                           ?>
                         </div>
                         <?php
@@ -110,9 +136,12 @@
                       else{
                         $error = false;
                         $_SESSION['messaggio_errore'] = $error;
-                        header('login.php');
+                        header("Location: http://localhost/LibraryPHP/login.php/");
                       }
                     }
+                }
+                else{
+                  header("Location: http://localhost/LibraryPHP/sign.php/");
                 }
               }
             ?>
