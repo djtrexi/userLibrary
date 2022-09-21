@@ -3,6 +3,7 @@
   require('connessione.php');
 ?>
 <?php
+  mysqli_free_result($result);
   $idLibro = $_GET['idLibro'];
   $email = $_SESSION['emailUtente'];
   $query = "SELECT id
@@ -13,7 +14,7 @@
     $error = true;
     $_SESSION['messaggio_errore'] = $error;
     mysqli_free_result($result);
-    header('infoBook.php');
+    header('Location: http://localhost/LibraryPHP/infoBook.php/');
   }
   else{
     $row = mysqli_fetch_array($result);
@@ -29,22 +30,24 @@
     if(mysqli_num_rows($result) == 0){
       $query = "INSERT INTO aggiunta(codiceutente, codicelibri, acquistato)
                 VALUES('$idUtente', '$idLibro', false)";
+      mysqli_free_result($result);
       $result = mysqli_query($connessione, $query);
       if($result){
         $error = false;
         $_SESSION['messaggio_errore'] = $error;
-        header('viewBooks.php');
+        header('Location: http://localhost/LibraryPHP/viewBooks.php/');
       }
       else{
         $error = true;
         $_SESSION['messaggio_errore'] = $error;
-        header('infoBook.php');
+        header('Location: http://localhost/LibraryPHP/infoBook.php/');
       }
     }
     else{
       $error = true;
       $_SESSION['messaggio_errore'] = $error;
-      header('infoBook.php');
+      mysqli_free_result($result);
+      header('Location: http://localhost/LibraryPHP/infoBook.php/');
     }
   }
 ?>
