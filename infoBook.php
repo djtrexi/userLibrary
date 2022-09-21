@@ -105,7 +105,7 @@
               <?php
                 $query = "SELECT *
                           FROM libri
-                          WHERE titolo LIKE '%$nameLibro%'";
+                          WHERE titolo LIKE '%$nameLibro%' AND aggiunto = false";
                 $result = mysqli_query($connessione, $query);
                 if(mysqli_num_rows($result) == 0){
                   $error = true;
