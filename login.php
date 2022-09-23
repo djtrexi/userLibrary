@@ -97,6 +97,9 @@
                           $password = crypt($password, 0);
                           if($password == $password_rows_user['password']){
                             $_SESSION['emailUtente'] = $email;
+                            $row = mysqli_fetch_array($result);
+                            $idUtente = (int) $row['id'];
+                            $_SESSION['idUtente'] = $idUtente;
                             $_SESSION['start_time'] = time();
                             $error = false;
                             $_SESSION['messaggio_errore'] = $error;
