@@ -150,8 +150,8 @@
                   <div>
                     <nav id = "navLinkButton">
                       <?php
-                        echo "<button type = 'submit'><a href = 'researchBook.php'>Torna alla home</a></button>";
-                        echo "<button type = 'submit'><a href = 'viewBooks.php'>vedi i tuoi libri salvati</a></button>";
+                        echo "<button type = 'submit'><a href = 'http://localhost/LibraryPHP/researchBook.php/'>Torna alla home</a></button>";
+                        echo "<button type = 'submit'><a href = 'http://localhost/LibraryPHP/viewBooks.php/'>vedi i tuoi libri salvati</a></button>";
                       ?>
                     </nav>
                   </div>
