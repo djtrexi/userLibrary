@@ -69,7 +69,7 @@
                           echo "<td>$row[casaeditrice]</td>";
                           echo "<td>$row[edizione]</td>";
                           echo "<td>$row[annodipubblicazione]</td>";
-                          echo "<td><a href = 'http://localhost/LibraryPHP/aggiuntaLibro.php/?idLibro=$row[id]'><input type = 'submit' value = 'Compra'></td>";
+                          echo "<td><a href = 'http://localhost/LibraryPHP/shopBook.php/?idLibro=$row[id]'><input type = 'submit' value = 'Compra'></td>";
                         echo "</tr>";
                       }
                   } 
