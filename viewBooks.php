@@ -34,24 +34,17 @@
               </div>
               <div>
                 <nav>
-                  <button>
-                    <?php 
-                      echo "<a href = 'viewBooksNotShop.php'></a>"; 
+                  <?php
+                      echo "<a href = 'http://localhost/LibraryPHP/viewBooksNotShop.php/'>Libri aggiunti alla lista ma non acquistati</a>"; 
                     ?>
-                    Libri aggiunti alla lista ma non acquistati
-                  </button>
-                  <button>
+                    
                     <?php 
-                      echo "<a href = 'viewBooksShop.php'></a>"; 
+                      echo "<a href = 'http://localhost/LibraryPHP/viewBooksShop.php/'>Libri acquistati</a>"; 
                     ?>
-                    Libri acquistati
-                  </button>
-                  <button>
+                    
                     <?php
-                      echo "<a href = 'viewBooksAll.php'></a>";
+                      echo "<a href = 'http://localhost/LibraryPHP/viewBooksAll.php/'>Tutti i libri</a>";
                     ?>
-                    Tutti i libri sia che non acquistati
-                  </button>
                 </nav>
               </div>
             </div>
