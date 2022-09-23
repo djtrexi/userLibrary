@@ -16,9 +16,6 @@
     header('Location: http://localhost/LibraryPHP/infoBook.php/');
   }
   else{
-    $row = mysqli_fetch_array($result);
-    $idUtente = (int) $row[0];
-    $_SESSION['idUtente'] = $idUtente;
     mysqli_free_result($result);
 
     $query = "SELECT *

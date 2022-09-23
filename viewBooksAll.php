@@ -43,7 +43,7 @@
                       while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                           echo "<td>$row[titolo]</td>";
-                          echo "<td>$row[casaedotrice]</td>";
+                          echo "<td>$row[casaeditrice]</td>";
                           echo "<td>$row[edizione]</td>";
                           echo "<td>$row[annodipubblicazione]</td>";
                           $acquistato = (boolean) $row['acquistato'];
@@ -51,7 +51,7 @@
                             echo "<td>SI</td>";
                           }
                           else{
-                            echo "<td><a href = 'aggiuntaLibro.php?idLibro=$row[id]'><input type = 'submit' value = 'comprato'>NO</td>";
+                            echo "<td><a href = 'http://localhost/LibraryPHP/shopBook.php/?idLibro=$row[id]'><input type = 'submit' value = 'Compra'></td>";
                           }
                         echo "</tr>";
                       }

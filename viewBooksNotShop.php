@@ -48,7 +48,7 @@
           <article>
             <div>
               <?php
-              $idUtente = $_SESSION['idUtente'];
+                $idUtente = $_SESSION['idUtente'];
                 $query = "SELECT l.id, l.titolo, l.casaeditrice, l.edizione, l.annodipubblicazione, l.prezzo
                           FROM aggiunta a, libri l
                           WHERE a.codiceutente = '$idUtente' AND a.codicelibri = l.id AND acquistato = false";

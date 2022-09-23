@@ -23,6 +23,7 @@
           <article>
             <div>
               <?php
+                $idUtente = $_SESSION['idUtente'];
                 $query = "SELECT l.id, l.titolo, l.casaeditrice, l.edizione, l.annodipubblicazione, l.prezzo, a.acquistato
                           FROM aggiunta a, libri l
                           WHERE a.codiceutente = '$idUtente' AND a.codicelibri = l.id AND acquistato = true";
@@ -39,7 +40,7 @@
                       while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                           echo "<td>$row[titolo]</td>";
-                          echo "<td>$row[casaedotrice]</td>";
+                          echo "<td>$row[casaeditrice]</td>";
                           echo "<td>$row[edizione]</td>";
                           echo "<td>$row[annodipubblicazione]</td>";
                         echo "</tr>";
