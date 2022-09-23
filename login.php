@@ -8,15 +8,41 @@
 <html lang = "en">
   <head>
     <title>Login user</title>
+    <meta charset = "UTF-8">
+    <style>
+      body{
+        height: 100%;
+        width: 100%;
+      }
+
+      #title{
+        font-size: 35px;
+      }
+
+      header{
+        text-align: center;
+        border: 2px solid black;
+      }
+
+      form{
+        text-align: center;
+      }
+
+      #inviadati{
+        margin: 25px;
+        text-align: center;
+        width: 120px;
+      }
+    </style>
   </head>
   <body>
-    <div>
+    <div id = "header">
       <header>
-        <div>
-          <h1>Login utente</h1>
+        <div id = "zone_title">
+          <h1 id = "title">Login utente</h1>
         </div>
-        <div>
-          <p>Creato da Leonardo Cerchioni</p>
+        <div id = "zone_text">
+          <p id = "text">Creato da Leonardo Cerchioni</p>
         </div>
       </header>
       <?php
@@ -65,7 +91,7 @@
                       <input type = "password" name = "password">
                     </span>
                     <br>
-                    <input type = "submit" value = "login">
+                    <input id = "inviadati" type = "submit" value = "login">
                   </form>
                   <?php
                     }
@@ -109,6 +135,7 @@
                             $row = mysqli_fetch_array($result);
                             $idUtente = (int) $row['id'];
                             $_SESSION['idUtente'] = $idUtente;
+                            mysqli_free_result($result);
 
                             header('Location: http://localhost/LibraryPHP/researchBook.php/');
                           }
