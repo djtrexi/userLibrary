@@ -109,6 +109,21 @@
             </section>
           </article>
         </div>
+        <div>
+          <article>
+            <section>
+              <div>
+                <?php
+                  echo "<button type = 'submi'>
+                          <a href = 'http://localhost/LibraryPHP/logout.php/'>
+                            Logout
+                          </a>
+                        </button>";
+                ?>
+              </div>
+            </section>
+          </article>
+        </div>
       </main>
     </div>
   </body>
