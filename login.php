@@ -33,6 +33,14 @@
         text-align: center;
         width: 120px;
       }
+
+      #zoneError{
+        margin: 6px;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 14px;
+        border: 2px solid black;
+      }
     </style>
   </head>
   <body>
@@ -46,7 +54,7 @@
         </div>
       </header>
       <?php
-        echo "<div>";
+        echo "<div id = 'zoneError'>";
           $error = $_SESSION['messaggio_errore'];
           if($error){
             echo "<header>";
