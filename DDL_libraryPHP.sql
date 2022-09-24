@@ -18,6 +18,7 @@ CREATE TABLE libri(
   edizione BIT NOT NULL,
   annodipubblicazione DATE NOT NULL,
   prezzo DOUBLE NOT NULL,
+  aggiunto BOOLEAN DEFAULT FALSE,
   PRIMARY KEY(id)
 );
 
