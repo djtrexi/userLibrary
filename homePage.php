@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang = "en">
   <head>
@@ -49,8 +52,9 @@
           <section>
             <article>
               <?php
-                echo "<button type = 'submit'><a href = 'login.php'>Login</a></button>";
-                echo "<button type = 'submit'><a href = 'sign.php'>Sign</a></button>";
+                $_SESSION['messaggio_errore'] = false;
+                echo "<button type = 'submit'><a href = 'Location: http://localhost/LibraryPHP/login.php/'>Login</a></button>";
+                echo "<button type = 'submit'><a href = 'Location: http://localhost/LibraryPHP/sign.php/'>Sign</a></button>";
               ?>
             </article>
           </section>
