@@ -45,6 +45,29 @@
     <div>
       <main>
         <section>
+          <article>
+            <?php
+              echo "<div>";
+                $error = $_SESSION['messaggio_errore'];
+                if($error){
+                  echo "<header>";
+                    echo "<div>";
+                      echo "<h2>Errore 404</h2>";
+                    echo "</div>";
+                    echo "<div>";
+                      echo "<p>";
+                        echo "<strong>";
+                          echo "I dati inseriti sono errati...";
+                        echo "</strong>";
+                      echo "</p>";
+                    echo "</div>";
+                  echo "</header>";
+                }
+              echo "</div>";
+            ?>
+          </article>
+        </section>
+        <section>
             <?php
               if(!isset($_POST['nome']) ||
                 !isset($_POST['cognome']) || 
@@ -114,10 +137,9 @@
                               WHERE email = '$email'";
                     $result = mysqli_query($connessione, $query);
                     if(mysqli_num_rows($result) != 0){
-                      $message = "Error 404...Utente già registrato nel nostro sito";
-                      echo "<script type='text/javascript'>
-                              alert('$message');
-                            </script>";
+                      $error = true;
+                      $_SESSION['messaggio_errore'] = $error;
+                      header('Location: http://localhost/LibraryPHP/sign.php');
                     }
                     else{
                       $query = "INSERT INTO utenti(nome, cognome, email, password) VALUES('$nome', '$cognome', '$email', '$password')";
@@ -126,8 +148,9 @@
                         ?>
                         <div>
                           <?php
+                            $error = true;
+                            $_SESSION['messaggio_errore'] = $error;
                             header("Location: http://localhost/LibraryPHP/sign.php/");
-                            echo "<a href = 'login.php'>login for you</a>";
                           ?>
                         </div>
                         <?php
@@ -140,6 +163,8 @@
                     }
                 }
                 else{
+                  $error = true;
+                  $_SESSION['messaggio_errore'] = $error;
                   header("Location: http://localhost/LibraryPHP/sign.php/");
                 }
               }
