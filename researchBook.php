@@ -30,6 +30,11 @@
         margin-top: 22px;
         text-align: center;
       }
+
+      #zonelogout{
+        margin-top: 15px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -128,6 +133,15 @@
           </article>
         </section>
         </div>
+        <section>
+          <article>
+            <div id = "zonelogout">
+              <?php  
+                echo "<button type = 'submit'><a href = 'http://localhost/LibraryPHP/logout.php/'>logout</a></button>";
+              ?>
+            </div>
+          </article>
+        </section>
       </main>
     </div>
   </body>

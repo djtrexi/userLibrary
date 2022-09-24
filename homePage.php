@@ -53,8 +53,8 @@
             <article>
               <?php
                 $_SESSION['messaggio_errore'] = false;
-                echo "<button type = 'submit'><a href = 'Location: http://localhost/LibraryPHP/login.php/'>Login</a></button>";
-                echo "<button type = 'submit'><a href = 'Location: http://localhost/LibraryPHP/sign.php/'>Sign</a></button>";
+                echo "<button type = 'submit'><a href = 'login.php'>Login</a></button>";
+                echo "<button type = 'submit'><a href = 'sign.php'>Sign</a></button>";
               ?>
             </article>
           </section>

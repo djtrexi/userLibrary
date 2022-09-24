@@ -54,10 +54,10 @@
         </div>
       </header>
       <?php
-        echo "<div id = 'zoneError'>";
+        echo "<div>";
           $error = $_SESSION['messaggio_errore'];
           if($error){
-            echo "<header>";
+            echo "<header id = 'zoneError>";
               echo "<div>";
                 echo "<h2>Errore 404</h2>";
               echo "</div>";

@@ -45,8 +45,11 @@
   <body>
     <div id = "header">
       <header>
-        <div id = "title">
-          <h1>Sign</h1>
+        <div id = "zonetitle">
+          <h1 id = "title">Sign</h1>
+        </div>
+        <div id = "zonetext">
+          <p id = "text">Creato da Leonardo Cerchioni</p>
         </div>
       </header>
     </div>
@@ -55,10 +58,10 @@
         <section>
           <article>
             <?php
-              echo "<div id = 'zoneError'>";
+              echo "<div>";
                 $error = $_SESSION['messaggio_errore'];
                 if($error){
-                  echo "<header>";
+                  echo "<header id = 'zoneError'>";
                     echo "<div>";
                       echo "<h2>Errore 404</h2>";
                     echo "</div>";
