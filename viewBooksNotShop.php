@@ -12,7 +12,18 @@
         width: 100%;
       }
 
+      #header{
+        border: 2px solid black;
+        text-align: center;
+      }
+
+      #back{
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
       button{
+        text-align: center;
         margin: 15px;
       }
 
@@ -30,19 +41,27 @@
       tr:hover {
         background-color: coral;
       }
+      
+      #zonemysqliqueryerror{
+        text-align: center;
+        font-size: 30px;
+        border: 2px solid black;
+        margin: 15px;
+      }
     </style>
   </head>
   <body>
-    <div>
+    <div id = "header">
       <header>
-        <div>
-          <h1>View books not shop</h1>
+        <div id = "zonetitle">
+          <h1 id = "title">View books not shop</h1>
         </div>
-        <div>
+        <div id = "zonetext">
+          <p id = "text">Creato da Leonardo Cerchioni</p>
         </div>
       </header>
     </div>
-    <div>
+    <div id = "main">
       <main>
         <section>
           <article>
@@ -72,10 +91,31 @@
                           echo "<td><a href = 'http://localhost/LibraryPHP/shopBook.php/?idLibro=$row[id]'><input type = 'submit' value = 'Compra'></td>";
                         echo "</tr>";
                       }
+                  }
+                  else{
+                    echo "<div id = 'zonemysqliqueryerror'>";
+                      echo "<div id = 'zonetitlerror'>";
+                        echo "<h1 id = 'titlerror'>Non ci sono libri da comprare</h1>";
+                      echo "</div>";
+                      echo "<div>";
+                        echo "<button type = 'submit'>Torna alla home</button>";
+                      echo "</div>";
+                    echo "</div>";
                   } 
                 }
               ?>
             </div>
+          </article>
+        </section>
+        <section>
+          <article>
+            <?php
+              echo "<button id = 'back' type = 'submit'>
+                      <a href = 'http://localhost/LibraryPHP/viewBooks.php/'>
+                        Back to view books
+                      </a>
+                    </button>";
+            ?>
           </article>
         </section>
       </main>
