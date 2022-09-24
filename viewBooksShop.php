@@ -6,14 +6,43 @@
 <html lang = "en">
   <head>
     <title>View books</title>
+    <meta charset = "UTF-8">
+    <style>
+      table, th, td {
+        border: 1px solid;
+        width: 100%;
+        text-align: center;
+        height: 50px;
+      }
+
+      th{
+        background-color: green;
+      }
+
+      tr:hover {
+        background-color: coral;
+      }
+
+      button{
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      #header{
+        border: 2px solid black;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+    </style>
   </head>
   <body>
-    <div>
+    <div id = "header">
       <header>
-        <div>
-          <h1></h1>
+        <div id = "zonetitle">
+          <h1 id = "title">View books shop</h1>
         </div>
-        <div>
+        <div id = "zonetext">
+          <p id = "text">Creato da Leonardo Cerchioni</p>
         </div>
       </header>
     </div>
@@ -49,6 +78,17 @@
                 }
               ?>
             </div>
+          </article>
+        </section>
+        <section>
+          <article>
+            <?php
+              echo "<button type = 'submit'>
+                      <a href = 'http://localhost/LibraryPHP/viewBooks.php/'>
+                        Back to view books
+                      </a>
+                    </button>";
+            ?>
           </article>
         </section>
       </main>
